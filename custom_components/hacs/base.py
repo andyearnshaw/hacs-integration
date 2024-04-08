@@ -700,7 +700,7 @@ class HacsBase:
         self,
         url: str,
         *,
-        headers: dict | None = None,
+        headers: dict = {},
         keep_url: bool = False,
         nolog: bool = False,
         **_,
@@ -715,12 +715,16 @@ class HacsBase:
         self.log.debug("Trying to download %s", url)
         timeouts = 0
 
+        final_headers = dict({
+            "Authorization": f'Bearer {self.configuration.token}'
+        }, **headers)
+
         while timeouts < 5:
             try:
                 request = await self.session.get(
                     url=url,
                     timeout=ClientTimeout(total=60),
-                    headers=headers,
+                    headers=final_headers,
                 )
 
                 # Make sure that we got a valid result
