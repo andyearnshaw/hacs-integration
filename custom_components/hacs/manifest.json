@@ -1,8 +1,8 @@
 {
-    "domain": "hacs",
-    "name": "HACS",
+    "domain": "hacs-plus",
+    "name": "HACS+",
     "codeowners": [
-        "@ludeeus"
+        "@andyearnshaw"
     ],
     "config_flow": true,
     "dependencies": [

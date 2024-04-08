@@ -127,7 +127,7 @@ class HacsConfiguration:
     python_script: bool = False
     release_limit: int = 5
     sidepanel_icon: str = "hacs:hacs"
-    sidepanel_title: str = "HACS"
+    sidepanel_title: str = "HACS+"
     theme_path: str = "themes/"
     theme: bool = False
     token: str = None
