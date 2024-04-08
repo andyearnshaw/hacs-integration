@@ -104,6 +104,7 @@ class HacsFlowHandler(ConfigFlow, domain=DOMAIN):
             self.device = GitHubDeviceAPI(
                 client_id=CLIENT_ID,
                 session=aiohttp_client.async_get_clientsession(self.hass),
+                scope="repo",
                 **{"client_name": f"HACS/{integration.version}"},
             )
             try:
